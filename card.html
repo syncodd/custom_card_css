@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>Custom Css Card</title>
+    <link rel="stylesheet" href="card.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="card.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <content>
+                <input class="title" placeholder="Title">
+                <div class="line-left">
+                    <hr class="line">
+                </div>
+                <textarea class="desc" placeholder="Description" rows="5"></textarea>
+            </content>
+            <img src="icon.svg" class="icon"/>
+        </div>
+    </div>
+    <label>Background Color: </label>
+    <input type="color" name="color1" id="color1" value="#020024">
+    <input type="color" name="color2" id="color2" value="#2b7e70">
+    <input type="color" name="color3" id="color3" value="#00745e">
+</body>
+<script>
+    function changeBackground() {
+        card = document.getElementsByClassName("card")[0];
+        color1 = document.getElementsByName("color1")[0].value;
+        color2 = document.getElementsByName("color2")[0].value;
+        color3 = document.getElementsByName("color3")[0].value;
+        card.style.background = 'linear-gradient(117deg, ' + color1 + ' 0%,' + color2 + ' 71%,' + color3 + ' 100%)';
+    }
+
+    $("#color1").change(changeBackground);
+    $("#color2").change(changeBackground);
+    $("#color3").change(changeBackground);
+    changeBackground();
+</script>
+</html>
